@@ -1,0 +1,213 @@
+{
+    "id": 3,
+    "titre": "Savon Hydratant",
+    "description": "Un savon doux et hydratant pour la peau sensible.",
+    "surgraissage": 0,
+    "apportEnEau": 371.667,
+    "avecSoude": true,
+    "concentrationAlcalin": 30,
+    "qteAlcalin": 530.952,
+    "ligneIngredients": [
+      {
+        "ligneIngredientId": {
+          "ingredientId": 1,
+          "recetteId": 3
+        },
+        "quantite": 500,
+        "pourcentage": 50,
+        "ingredient": {
+          "id": 1,
+          "nom": "Coco",
+          "iode": 9,
+          "ins": 248,
+          "sapo": 257,
+          "volMousse": 13.326,
+          "tenueMousse": 9.56,
+          "douceur": 7.746,
+          "lavant": 14.462,
+          "durete": 9.39,
+          "solubilite": 11.204,
+          "sechage": 11.88,
+          "estCorpsGras": true
+        }
+      },
+      {
+        "ligneIngredientId": {
+          "ingredientId": 2,
+          "recetteId": 3
+        },
+        "quantite": 500,
+        "pourcentage": 50,
+        "ingredient": {
+          "id": 2,
+          "nom": "Olive",
+          "iode": 78,
+          "ins": 111,
+          "sapo": 189,
+          "volMousse": 9.838,
+          "tenueMousse": 9.152,
+          "douceur": 9.26,
+          "lavant": 10.192,
+          "durete": 10.144,
+          "solubilite": 9.298,
+          "sechage": 10.194,
+          "estCorpsGras": true
+        }
+      }
+    ],
+    "resultats": [
+      {
+        "resultatId": {
+          "caracteristiqueId": 1,
+          "recetteId": 3
+        },
+        "score": 43.5,
+        "caracteristique": {
+          "id": 1,
+          "nom": "Iode"
+        },
+        "mention": {
+          "id": 2,
+          "label": "Faible",
+          "noteMin": 30,
+          "noteMax": 70
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 2,
+          "recetteId": 3
+        },
+        "score": 179.5,
+        "caracteristique": {
+          "id": 2,
+          "nom": "Indice INS"
+        },
+        "mention": {
+          "id": 6,
+          "label": "Trop élevé",
+          "noteMin": 160,
+          "noteMax": 200
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 3,
+          "recetteId": 3
+        },
+        "score": 8.503,
+        "caracteristique": {
+          "id": 3,
+          "nom": "Douceur"
+        },
+        "mention": {
+          "id": 8,
+          "label": "Bonne",
+          "noteMin": 5,
+          "noteMax": 10
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 4,
+          "recetteId": 3
+        },
+        "score": 12.327,
+        "caracteristique": {
+          "id": 4,
+          "nom": "Lavant"
+        },
+        "mention": {
+          "id": 10,
+          "label": "Excellent",
+          "noteMin": 7,
+          "noteMax": 15
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 5,
+          "recetteId": 3
+        },
+        "score": 11.582,
+        "caracteristique": {
+          "id": 5,
+          "nom": "Volume de mousse"
+        },
+        "mention": {
+          "id": 12,
+          "label": "Optimal",
+          "noteMin": 8,
+          "noteMax": 15
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 6,
+          "recetteId": 3
+        },
+        "score": 9.356,
+        "caracteristique": {
+          "id": 6,
+          "nom": "Tenue de mousse"
+        },
+        "mention": {
+          "id": 14,
+          "label": "Stable",
+          "noteMin": 5,
+          "noteMax": 10
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 7,
+          "recetteId": 3
+        },
+        "score": 9.767,
+        "caracteristique": {
+          "id": 7,
+          "nom": "Dureté"
+        },
+        "mention": {
+          "id": 16,
+          "label": "Dur",
+          "noteMin": 5,
+          "noteMax": 10
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 8,
+          "recetteId": 3
+        },
+        "score": 10.251,
+        "caracteristique": {
+          "id": 8,
+          "nom": "Solubilité"
+        },
+        "mention": {
+          "id": 19,
+          "label": "Forte",
+          "noteMin": 10,
+          "noteMax": 15
+        }
+      },
+      {
+        "resultatId": {
+          "caracteristiqueId": 9,
+          "recetteId": 3
+        },
+        "score": 11.037,
+        "caracteristique": {
+          "id": 9,
+          "nom": "Séchage"
+        },
+        "mention": {
+          "id": 22,
+          "label": "Rapide",
+          "noteMin": 10,
+          "noteMax": 15
+        }
+      }
+    ]
+  }

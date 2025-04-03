@@ -1,0 +1,22 @@
+
+<!-- Titre du modal : -->
+<div class="modal-header">
+    <h4 class="modal-title">Choisir l'ingrédient</h4>
+    <button type="button" class="btn-close" aria-label="Fermer" (click)="onCancel()"></button>
+</div>
+  
+<!-- Corps du modal - liste de sélection de l'ingrédient : -->
+<div class="modal-body">
+    <select class="form-select" [(ngModel)]="selectedIngredient">
+        <option *ngFor="let ing of ingredients" [ngValue]="ing">
+            {{ ing.nom }}
+        </option>
+    </select>
+</div>
+  
+<!-- Footer - Boutons de validation/annulation : -->
+<div class="modal-footer">
+    <button class="btn btn-primary" (click)="onAdd()">Ajouter</button>
+    <button class="btn btn-secondary" (click)="onCancel()">Fermer</button>
+</div>
+  

@@ -1,0 +1,22 @@
+{
+    "id": null,
+    "titre": "Savon Hydratant",
+    "description": "Un savon doux et hydratant pour la peau sensible.",
+    "surgraissage": 0.0,
+    "avecSoude": true,
+    "concentrationAlcalin": 30.0,
+    "ligneIngredients": [
+        {
+        
+            "quantite": 500.0,
+            "pourcentage": 50.0,
+            "ingredientId":1
+        },
+        {
+            "ingredientId":2,
+            "quantite": 500.0,
+            "pourcentage": 50.0
+          
+        }
+    ]
+}

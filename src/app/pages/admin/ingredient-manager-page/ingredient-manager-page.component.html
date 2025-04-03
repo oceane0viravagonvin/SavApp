@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Gestion des Ingrédients</h1>
+
+    <!-- Bouton d'ajout d'un ingrédient (ouvre le modal du formulaire ingrédient) -->
+    <div class="container row col-3">
+        <button class="btn btn-info" (click)="openModalFormIngredient()">Créer un ingrédient</button>
+    </div>
+    
+  
+    <!-- Formulaire d'ajout/modification -->
+    <app-ingredient-form 
+        [ingredient]="selectedIngredient"
+        [isEditing]="isEditing"
+        (save)="saveIngredient($event)"
+        (cancelEdit)="resetForm()">
+    </app-ingredient-form>
+  
+    <!-- Liste des ingrédients -->
+    <app-ingredient-list 
+        [ingredients]="ingredients"
+        (edit)="editIngredient($event)"
+        (delete)="deleteIngredient($event)"
+        (deleteAll)="deleteAllIngredients()">
+    </app-ingredient-list>
+  
+    <!-- Import / Export CSV -->
+    <app-ingredient-import-export
+        [ingredients]="ingredients"         
+        (importComplete)="fetchIngredients()">
+    </app-ingredient-import-export>
+</div>
+  
+
+
+
+
+  

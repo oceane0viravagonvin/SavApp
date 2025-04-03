@@ -1,0 +1,28 @@
+<!-- ----------------- -->
+<!-- Import/Export CSV -->
+<!-- ----------------- -->
+
+<!-- Boutons d'import & export -->
+<div class="row ms-2">
+    <!-- Bouton d'import CSV : -->
+    <label class="col-md-4 btn btn-primary m-3">
+      Importer depuis un fichier CSV
+      <input type="file" (change)="importFromCSV($event)" hidden>
+    </label>
+  
+    <!-- Bouton d'export CSV : -->
+    <button class="col-md-4 btn btn-success m-3" (click)="exportToCSV()">Exporter en CSV</button>
+  </div>
+
+
+<!-- Message de confirmation -->
+<div *ngIf="message && error" class="alert alert-danger mt-2">
+    {{ message }}
+</div>
+
+<div *ngIf="message && !error" class="alert alert-success mt-2">
+    {{ message }}
+</div>
+  
+
+  

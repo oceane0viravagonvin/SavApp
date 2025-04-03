@@ -1,0 +1,129 @@
+<div class="container mt-4">
+    <h2>L'indice INS moyen :  196.65 </h2>
+  
+    <!-- Message de chargement -->
+    <div *ngIf="isLoading" class="alert alert-info">
+      Chargement des recettes...
+    </div>
+  
+    <!-- Message d'erreur -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Message si aucune recette n'est disponible -->
+    <div *ngIf="!isLoading && !errorMessage && recettes.length === 0" class="alert alert-warning">
+        Aucune recette enregistrée.
+    </div>
+  
+
+     <!-- Affichage des cards des recettes  -->
+    <div class="container">
+        <div class="row">
+        <div *ngFor="let recette of recettes" class="col-12 col-md-6 col-lg-4">
+        <div class="card my-2 shadow">
+            
+            <!-- Titre de la recette  -->
+            <div class="card-header">
+                <div class="card-title ms-2 my-2">
+                    <h5 ><b>{{ recette.titre }}</b></h5>
+                </div>
+            </div>
+
+            <!-- Graphe radar de la recette : -->
+            <div>
+                <app-radar-chart
+                    [title]="recette.titre"
+                    [scores]="[
+                        recette.resultats[2].score,
+                        recette.resultats[3].score,
+                        recette.resultats[4].score,
+                        recette.resultats[5].score,
+                        recette.resultats[6].score,
+                        recette.resultats[7].score,
+                        recette.resultats[8].score
+                        ]">
+               </app-radar-chart>
+            </div>      
+           
+            <!-- Corps de texte principal de la card -->
+            <div class="card-body p-2">       
+                <div class="card-text">
+                    <div>
+                        <p class="m-0"><b><u>Description :</u></b></p>
+                        <p>{{ recette.description }}</p>
+                    </div>
+
+                    <div class="mt-2">
+                        <b><u>Caractéristiques :</u></b>
+
+                        <table>
+                            <tr>
+                                <td><b>- Sugraissage : </b>{{ recette.surgraissage }}%</td>
+                                <td><b>- {{ recette.resultats[0].caracteristique?.nom }} : </b>{{ recette.resultats[0].score.toFixed(1) }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>- {{ recette.resultats[1].caracteristique?.nom }} : </b>{{ recette.resultats[1].score.toFixed(1) }}</td>
+                                <td><b>- {{ recette.resultats[2].caracteristique?.nom }} : </b>{{ recette.resultats[2].score.toFixed(1) }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>- {{ recette.resultats[3].caracteristique?.nom }} : </b>{{ recette.resultats[3].score.toFixed(1) }}</td>
+                                <td><b>- Vol. mousse : </b>{{ recette.resultats[4].score.toFixed(1) }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>- Tenue mousse : </b>{{ recette.resultats[5].score.toFixed(1) }}</td>
+                                <td><b>- {{ recette.resultats[6].caracteristique?.nom }} : </b>{{ recette.resultats[6].score.toFixed(1) }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>- {{ recette.resultats[7].caracteristique?.nom }} : </b>{{ recette.resultats[7].score.toFixed(1) }}</td>
+                                <td><b>- {{ recette.resultats[8].caracteristique?.nom }} : </b>{{ recette.resultats[8].score.toFixed(1) }}</td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+
+                    <div class="mt-2">
+                        <b><u>Composition :</u></b>
+                        <ul>
+                            <li><b>Agent alcalin : </b>{{  recette.avecSoude ? 'Soude' : 'Potasse'  }}</li>
+                            <li><b>Quantité alcalin : </b> {{ recette.qteAlcalin.toFixed(0) }}g</li>
+                            <li><b>Apport eau : </b> {{ recette.apportEnEau.toFixed(0) }}g</li>
+
+                            <li class="mt-2"><u><b>Corps gras :</b></u></li>
+                                <ul>                                    
+                                    <div *ngFor="let ligne of recette.ligneIngredients">
+                                        <li *ngIf="ligne.ingredient?.estCorpsGras">
+                                            {{ ligne.ingredient?.nom }} : {{ ligne.quantite }}g
+                                        </li>
+                                    </div>
+                                </ul>
+                            
+                            <li class="mt-2"><u><b>Autre :</b></u></li>
+                                <ul>                                    
+                                    <div *ngFor="let ligne of recette.ligneIngredients">
+                                        <li *ngIf="ligne.ingredient?.estCorpsGras == false">
+                                            {{ ligne.ingredient?.nom }} : {{ ligne.quantite }}g
+                                        </li>                           
+                                    </div>
+                            </ul>
+                            
+                        </ul>
+                    </div>                    
+                </div>           
+            </div>
+
+            <!-- Pied de page de la card  -->
+            <div class="card-footer">
+                <a href="#" class="btn btn-info"><i class="bi bi-pen-fill me-1"></i>Modifier</a>
+                <button href="#" class="btn btn-danger"><i class="bi bi-trash-fill me-1"></i>Supprimer</button>
+            </div>  
+            <p id="elementASupprimer">Supprimer toute la recette ci-dessus.</p>
+            <button onclick="supprimerElement()">Supprimer</button>
+        
+        </div>    
+        </div>
+        </div>
+    </div>
+
+</div>
+  

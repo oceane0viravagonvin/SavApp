@@ -1,0 +1,65 @@
+<div class="row mt-4">
+    <h2>Liste des ingrédients :</h2>
+</div>
+
+
+
+<!-- Bouton pour supprimer TOUS les ingrédients -->
+<div class="row col-3 d-flex justify-content-between align-items-center ms-4 mt-3 mb-3">
+    <button class="btn btn-danger" (click)="openDeleteAllModal()">Supprimer TOUS les ingrédients</button>
+</div>
+    
+    
+<!-- ---------------------------->
+<!-- Tableau des ingrédients : -->
+<!-- ---------------------------->   
+
+<table class="table table-bordered table-striped mt-3" *ngIf="ingredients.length > 0">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Corps Gras</th>
+        <th>Ind. sapo.</th>
+        <th>Ind. INS</th>
+        <th>Ind. Iode</th>
+        <th>Lavant</th>
+        <th>Douceur</th>
+        <th>Duretée</th>
+        <th>Solubilité</th>
+        <th>Séchage</th>
+        <th>Vol. Mousse</th>
+        <th>Tenue Mousse</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let ingredient of ingredients">
+        <td>{{ ingredient.id }}</td>
+        <td>{{ ingredient.nom }}</td>
+        <td>{{ ingredient.estCorpsGras }}</td>
+        <td>{{ ingredient.sapo }}</td>
+        <td>{{ ingredient.ins }}</td>
+        <td>{{ ingredient.iode }}</td>
+        <td>{{ ingredient.lavant }}</td>
+        <td>{{ ingredient.douceur }}</td>
+        <td>{{ ingredient.durete }}</td>
+        <td>{{ ingredient.solubilite }}</td>
+        <td>{{ ingredient.sechage }}</td>
+        <td>{{ ingredient.volMousse }}</td>
+        <td>{{ ingredient.tenueMousse }}</td>
+        
+        <td>
+            <button class="btn btn-warning btn-sm me-2" (click)="editIngredient(ingredient)">
+                Modifier
+            </button>
+            <!-- <button class="btn btn-danger btn-sm" (click)="confirmDelete(ingredient)" data-toggle="modal" data-target="#deleteModal"> -->
+                <button class="btn btn-danger" (click)="openDeleteOneModal(ingredient)">
+                    Supprimer
+                </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+

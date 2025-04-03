@@ -1,0 +1,125 @@
+<header class="app-header fixed-top">
+    
+    <!-- ---------- -->
+    <!-- TOP BARRE :-->
+    <!-- ---------- -->
+
+    <div class="top-bar-fluid container-fluid p-0">        
+        <div class="top-bar-content container-xl p-0">
+            <a  class="navbar-brand me-auto"
+                routerLink="home"
+                routerLinkActive="active">
+                        <img    src="./assets/logo.png"
+                                alt="SavApp Logo"
+                                class="logo img-fluid"
+                        >
+            </a>
+                
+            <!-- Menu utilisateur : -->
+            <div class="user-menu align-items-center me-3">
+            
+                <span class="user-name text-dark bg-light rounded-1 ps-2">
+                    John DOE
+                </span>
+
+                <!-- Bouton Dropdown Bootstrap -->
+                <button class="dropdown-btn rounded-pill dropdown-toggle"
+                        type="button"
+                        id="userDropdown"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                </button>
+
+                <!-- Contenu du menu dropdown -->
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a  class="dropdown-item"
+                            routerLink="/login">Se connecter</a></li>
+                    <li><a  class="dropdown-item"
+                            routerLink="/account-manager">Mon compte</a></li>
+                    <li><a  class="dropdown-item"
+                            routerLink="/subscribe-page">Créer un compte</a></li>
+
+                    <!-- <li><hr class="dropdown-divider"></li> -->
+                    <!-- <li><a  class="dropdown-item text-danger"
+                            routerLink="#" (click)="logout()">Déconnexion</a></li> -->
+                </ul>
+
+            </div>
+        </div>
+    </div>        
+  
+
+    <!-- ------- -->
+    <!-- NAVBAR :-->
+    <!-- ------- -->
+
+    <nav class="nav-bar-fluid container-fluid  navbar navbar-expand-sm p-0 mb-4">
+        
+        <div class="container-xl nav-bar-content p-0">
+            
+            <!-- Bouton Toggle (menu hamburger) : -->
+            <button class="navbar-toggler ms-3 mt-2 mb-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"  
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+             <!-- Conteneur des liens du menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- Cale la navbar sur la droite -->
+                <!-- <div class="me-auto"></div> -->
+                <ul class="navbar-nav nav-underline">
+
+                    <li class="nav-item border-0">
+                        <a  class="nav-link"
+                            routerLink="home"
+                            routerLinkActive="active"
+                            title="Retour à la page d'accueil">
+                                <i class="bi bi-house-fill"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link"
+                            routerLink="calculator"
+                            routerLinkActive="active"
+                            title="Calculer une recette de savon">
+                            Calculateur
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link"
+                            routerLink="user/recipes"
+                            routerLinkActive="active"
+                            title="Gérer mes recettes (retrouver ,modifier, supprimer...)">
+                            Mes recettes
+                        </a>
+                    </li>
+                    <li class="nav-item admin-only">
+                        <a  class="nav-link"
+                            routerLink="admin/users"
+                            routerLinkActive="active"
+                            title="Gérer les utilisateurs">
+                            Utilisateurs
+                        </a>
+                    </li>
+                    <li class="nav-item admin-only">
+                        <a  class="nav-link"
+                            routerLink="admin/ingredients"
+                            routerLinkActive="active"
+                            title="Gérer les ingrédients (corps gras et agents alcalins)">
+                            Ingrédients
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+  

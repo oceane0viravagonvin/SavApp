@@ -1,0 +1,45 @@
+
+<!-- --------------------------->
+<!--  MODALE POUR FORMULAIRE  -->
+<!-- --------------------------->
+
+    <!-- Entête du modal  -->
+    <!-- ---------------- -->
+    <div class="modal-header">         
+        <h5 class="modal-title">{{ titre }}</h5>
+        <button type="button" class="btn-close" aria-label="Fermer"
+                (click)="activeModal.dismiss('Cross click')">
+        </button>
+    </div>
+    
+    <!-- Corps du modal : -->
+    <!-- --------------- -->
+    <div class="modal-body">        
+        {{ message }}
+
+        <!-- Formulaire d'ajout/modification -->
+        <app-ingredient-form 
+            [ingredient]="selectedIngredient"
+            [isEditing]="isEditing"
+            (save)="saveIngredient($event)"
+            (cancelEdit)="resetForm()">
+        </app-ingredient-form>
+    </div>
+
+    <!-- Pied du modal : -->
+    <!-- --------------- -->
+    <div class="modal-footer">
+        <!-- Bouton annulation -->
+        <button type="button" class="btn btn-secondary"
+                (click)="activeModal.close('Close click')">
+            Annuler
+        </button>
+
+        <!-- Bouton d'action -->
+        <!-- <button type="button" class="btn btn-{{ btnColor }}"
+        (click)="activeModal.close('execute')">
+            {{ btnText }}
+        </button>        -->
+    </div>
+
+
